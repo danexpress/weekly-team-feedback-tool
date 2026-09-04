@@ -1,0 +1,21 @@
+[project]
+name = "weekly-team-feedback-tool"
+version = "0.1.0"
+description = "Weekly team retrospective tool: collect Start/Stop/Continue feedback, cluster and vote, run the discussion, and turn the meeting into confirmed decisions and action items."
+authors = [
+    { name = "danexpress", email = "fredduoduoffei@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+weekly-team-feedback-tool = "weekly_team_feedback_tool:main"
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
