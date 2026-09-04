@@ -3,6 +3,17 @@
 - `uv sync` - install dependencies
 - `uv run pytest` - the whole suite
 - `uv run pytest tests/test_home.py` - one test file
+- `docker compose up -d` - start local Postgres (creates `app` and
+  `app_test` databases)
+- `uv run alembic upgrade head` - apply migrations to `DATABASE_URL`
+  (defaults to the local `app` database)
+- `uv run alembic downgrade base` - reverse all migrations
+- `uv run alembic revision --autogenerate -m "message"` - generate a
+  new migration from model changes
+- `uv run python -m weekly_team_feedback_tool.seed` - seed sample
+  users/project/memberships into `DATABASE_URL`
+- Tests run against `TEST_DATABASE_URL` (defaults to the local
+  `app_test` database) and create/drop their own schema
 
 ## Rules
 
