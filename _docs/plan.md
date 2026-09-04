@@ -1,453 +1,256 @@
-# Weekly Project Feedback Tool — Product Scope
+# Weekly Team Feedback Tool — MVP Scope
 
-## Product Goal
-Build a weekly project feedback tool for teams where all team members can submit structured feedback on project progress, tasks/features, collaboration, blockers, and risks.
+## Product goal
 
-The tool should encourage regular feedback while keeping participation flexible, transparent, and lightweight.
+Help project teams collect honest weekly feedback, turn it into a focused retrospective, and leave the meeting with documented decisions and action items.
 
----
+## Core workflow
 
-## 1. Users and Roles
+### 1. Create a feedback cycle
 
-### Primary Users
-- All team members
+A facilitator creates a weekly feedback cycle for a project and invites the team.
 
-### Roles
-- Owner
-- Admin
-- Member
+The facilitator is usually the project owner, but the role can be assigned to another team member.
 
-### Permissions
-- Owners and Admins can:
-  - Remove members
-  - Change member roles
-  - Change project settings
-  - Change project name
-  - Change weekly deadline
-  - Disable or regenerate invite links
-  - View submission status for team members
-  - Send manual reminders to people who have not responded
+### 2. Collect feedback
 
-- Members cannot:
-  - Remove members
-  - Change roles
-  - Change project settings
+Every team member submits feedback using:
 
----
+- **Start:** What should the team begin doing?
+- **Stop:** What should the team stop doing?
+- **Continue:** What is working and should continue?
 
-## 2. Project Membership
+Submissions are attributed by default. Contributors can select **Submit anonymously** for individual entries.
 
-### Joining a Project
-- Users join through a shareable invite link.
-- Anyone with the active invite link can join directly.
-- No approval is required.
+Before the retrospective, contributors can see and edit only their own feedback. They cannot see other team members’ submissions.
 
-### Invite Link Controls
-- Owners/Admins can:
-  - Disable the invite link
-  - Regenerate a new invite link
+### 3. Reveal and cluster feedback
 
----
+The facilitator starts the retrospective and reveals all submissions at once.
 
-## 3. Project Status
+The tool suggests thematic clusters automatically. The team can then:
 
-Projects can have one of three statuses:
+- Move cards between clusters
+- Merge or split clusters
+- Rename clusters
+- Leave cards ungrouped
 
-- Active
-- Paused
-- Archived
+### 4. Vote on discussion topics
 
-### Paused Projects
-- Weekly reminders stop.
-- Team members can still submit feedback.
-- Existing feedback can still be edited and discussed.
+Each team member receives **3 votes**.
 
-### Archived Projects
-- Users can still:
-  - Submit/edit feedback
-  - Reply
-  - React
-  - Use @mentions
-- Archived projects still send notifications for:
-  - Replies
-  - Reactions
-  - @mentions
+They may place multiple or all votes on the same cluster.
 
----
+Clusters are ranked by total votes, producing a prioritized discussion agenda.
 
-## 4. Weekly Feedback Structure
+### 5. Run the discussion
 
-### Core Feedback Areas
-Every project uses the same fixed core sections every week:
+The facilitator works through the prioritized topics and marks each one as:
 
-- Overall project progress
-- Specific tasks/features
-- Team collaboration
-- Blockers
-- Risks
-
-### Core Questions
-- The full fixed set is shown every week.
-- Core sections cannot be turned off per project.
-
-### Custom Questions
-- Projects can also have optional custom questions.
-- Any team member can add a custom question.
-- Custom questions become active immediately.
-
----
-
-## 5. Ratings and Comments
-
-### Rating System
-- 1–5 stars
-
-### Requirements
-- Star rating is required.
-- Written comment is optional.
-
----
-
-## 6. Identity and Anonymous Feedback
-
-### Default Behavior
-- Feedback is named by default.
-
-### Anonymous Option
-- Contributors can choose to submit feedback anonymously.
-- Anonymous means fully anonymous to everyone.
-- Owners and Admins cannot see the contributor identity.
-- Anonymous identity is not revealed in exports.
-
-### Changing Identity
-- Users can switch submitted feedback between:
-  - Named
-  - Anonymous
-
-### Anonymous Feedback Interaction
-Anonymous feedback supports the same features as named feedback:
-
-- Replies
-- Reactions
-- @mentions
-
----
-
-## 7. Feedback Visibility
-
-- Submitted feedback is visible to the whole team immediately.
-- Feedback does not wait until the weekly deadline to become visible.
-
----
-
-## 8. Editing and Deleting Feedback
-
-Users can:
-
-- Edit their submitted feedback
-- Delete their submitted feedback
-
-### Edited Feedback
-- Edited feedback shows an `Edited` label.
-- Full edit history is not shown.
-
----
-
-## 9. Replies
-
-- Team members can reply to feedback.
-- Replies are simple replies only.
-- No deep/nested threaded conversations.
-
----
-
-## 10. Reactions
-
-Users can react to feedback.
-
-### Reaction Rules
-- Reactions use a small fixed set of emoji.
-- Users cannot choose any arbitrary emoji.
-- Users can see who reacted.
-
-Example reaction set:
-
-- 👍
-- ✅
-- 👀
-
----
-
-## 11. Mentions
-
-- Users can @mention teammates in:
-  - Feedback
-  - Replies
-
-### Mention Notifications
-- @mentions trigger an immediate notification.
-
----
-
-## 12. Notifications
-
-Users receive notifications when:
-
-- Someone @mentions them
-- Someone replies to their feedback
-- Someone reacts to their feedback
-
-### Notification Timing
-- These notifications are immediate.
-
----
-
-## 13. Weekly Deadline
-
-### Deadline Configuration
-- Each project has its own configurable weekly deadline.
-
-### Late Feedback
-- Feedback can still be submitted after the deadline.
-- Late feedback is marked `Late`.
-
----
-
-## 14. Weekly Reminders
-
-### Automatic Weekly Reminder
-- Everyone gets a weekly reminder.
-- The reminder is sent even if the user has already submitted.
-- Weekly reminders are sent by email.
-- The email includes a direct link to the project's feedback form.
-
-### Manual Reminders
-- Owners/Admins can manually remind people who have not responded.
-- Manual reminders are sent by email only.
-
----
-
-## 15. Weekly Completion
-
-Users can mark a project as:
-
-`No feedback this week`
-
-### Rules
-- No reason is required.
-- It counts as completed for that week.
-- Users can undo the skip.
-- Users can later submit feedback during the same week.
-
----
-
-## 16. Drafts
-
-Users can save unfinished weekly feedback.
-
-### Draft Behavior
-- Drafts auto-save while the user types.
-- Users can return later and continue.
-
----
-
-## 17. Submission Status
-
-### Visibility
-Only Owners/Admins can see who has:
-
-- Submitted
+- Discussed
 - Skipped
-- Not responded yet
+- Deferred
 
-Regular members cannot see team-wide submission status.
+Team members can manually record notes, decisions, and action items during the meeting.
 
----
+### 6. Process the meeting record
 
-## 18. Feedback Feed
+After the meeting, the facilitator can upload:
 
-### Primary Organization
-The project feedback feed is organized primarily by:
+- Audio
+- Video
+- A transcript file
+- Pasted transcript text
 
-- Topic/question
+The system generates a transcript when necessary and suggests:
 
-### Filters
-Users can filter feedback by:
+- Decisions made
+- Action items
+- Action owners
+- Due dates, when mentioned
+- A short retrospective summary
 
-- Week
-- Person
-- Anonymous vs named
-- Rating
+The facilitator reviews and confirms these suggestions before they are saved.
 
----
+## Decisions made for the MVP
 
-## 19. Search
+### Extracted results require facilitator approval
 
-Users can search across the project.
+**Decision:** AI-generated actions and decisions remain drafts until the facilitator confirms them.
 
-Search includes:
+**Why:** Transcription and extraction can misunderstand context, ownership, or tentative statements. Automatic publishing would reduce trust and could assign work incorrectly.
 
-- Original feedback
-- Replies
+**Alternatives considered:**
 
----
+- Automatic saving: faster, but too risky.
+- Entire-team approval: safer, but creates unnecessary friction.
+- Action-owner approval: useful later, but adds notifications and workflow complexity.
 
-## 20. Dashboard
+### Feedback is submitted as separate cards
 
-Each user has a personal dashboard.
+**Decision:** Team members can create multiple short cards under Start, Stop, and Continue.
 
-### Dashboard Shows
-- All projects the user belongs to
-- Whether feedback has been completed for the current week
-- Upcoming project deadlines
-- Weekly completion indicator
+**Why:** Separate cards are easier to cluster, vote on, move, and discuss than one large response.
 
-Example:
+**Alternative considered:** One text field per category. Simpler to build, but harder to organize during the retrospective.
 
-`3 of 5 projects completed this week`
+### Anonymous feedback stays anonymous
 
-### Dashboard Controls
-Users can sort projects by:
+**Decision:** The system does not reveal anonymous authors to the facilitator or team.
 
-- Deadline
-- Name
-- Recent activity
+**Why:** “Anonymous” should have a clear and trustworthy meaning. Hidden administrator access would discourage honest feedback.
 
-Users can also:
+**Alternative considered:** Anonymous to teammates but visible to facilitators. This may be useful in some organizations, but it weakens psychological safety.
 
-- Pin projects
-- Favorite projects
+### Voting is visible after voting closes
 
-Pinned/favorited projects stay easy to access.
+**Decision:** Participants do not see live vote totals while voting. Results appear when everyone has voted or the facilitator closes voting.
 
----
+**Why:** Hidden totals reduce group influence and popularity bias.
 
-## 21. Exporting Feedback
+**Alternatives considered:**
 
-Users can export project feedback as:
+- Live totals: more engaging, but encourages people to follow existing votes.
+- Permanently private votes: less transparent and harder to facilitate.
 
-- CSV
-- PDF
+### Automatic clustering is always editable
 
-### Export Rules
-- Export includes all project feedback.
-- Users cannot filter exports before exporting.
-- Anonymous feedback remains anonymous in exports.
+**Decision:** AI proposes clusters but never finalizes them.
 
----
+**Why:** Similar wording does not always mean the same underlying problem. The team understands its context better than the model.
 
-## 22. Authentication
+**Alternative considered:** Fully automatic clustering. Faster, but likely to create confusing or incorrect groupings.
 
-Users must log in before submitting feedback.
+### Action items have a simple structure
 
-### Supported Login Methods
-- Email + password
-- Social login
+Each action contains:
 
-Initial social login options can include:
+- Description
+- Owner
+- Optional due date
+- Status: Open or Done
+- Related discussion topic
 
-- Google
-- Microsoft
+**Why:** This is enough to make outcomes accountable without turning the MVP into a project-management platform.
 
----
+**Alternatives considered:** Priorities, subtasks, dependencies, reminders, and recurring tasks. These should be deferred or handled through later integrations.
 
-## 23. MVP Behavior Summary
+### One retrospective belongs to one project
 
-A typical weekly flow:
+**Decision:** Feedback cycles and retrospectives are organized within projects.
 
-1. A user logs in.
-2. They see their projects and upcoming deadlines.
-3. They open a project.
-4. They complete the fixed weekly feedback questions.
-5. Each question requires a 1–5 star rating.
-6. Written comments are optional.
-7. They can submit as themselves or anonymously.
-8. Feedback becomes visible immediately.
-9. Other team members can reply, react, and @mention people.
-10. Feedback can be edited or deleted later.
-11. Late submissions remain allowed and are marked `Late`.
-12. A user may instead select `No feedback this week`.
-13. Owners/Admins can see who has responded and send reminder emails.
+**Why:** It provides enough structure for recurring teams while keeping permissions and history understandable.
 
----
+**Alternative considered:** Organization-wide retrospectives without projects. Simpler initially, but becomes confusing once users participate in multiple teams.
 
-## 24. Current MVP Feature List
+## Main screens
 
-### Authentication
-- Email/password login
-- Social login
+### Project page
 
-### Projects
-- Create/manage projects
-- Active/Paused/Archived status
-- Shareable invite link
-- Owner/Admin/Member roles
-- Configurable weekly deadline
+Shows:
 
-### Feedback
-- Fixed weekly feedback template
-- Optional custom questions
-- 1–5 star ratings
-- Optional comments
-- Anonymous/named submissions
-- Edit/delete
-- Late label
-- Draft auto-save
-- Skip week option
-
-### Collaboration
-- Simple replies
-- Fixed emoji reactions
-- @mentions
-- Immediate notifications
-
-### Discovery
-- Topic-based feed
-- Filters
-- Full project search
-- Search replies
-
-### Dashboard
-- Project list
+- Current feedback cycle
 - Submission status
-- Deadlines
-- Completion indicator
-- Sorting
-- Pin/favorite
+- Upcoming or active retrospective
+- Previous retrospectives
+- Open action items
 
-### Email
-- Weekly reminders
-- Manual reminder emails
-- Direct feedback-form links
+### Feedback form
 
-### Export
-- CSV
-- PDF
+Shows three columns or sections:
 
----
+- Start
+- Stop
+- Continue
 
-## 25. Decisions Still Open
+Each entry includes an anonymous checkbox.
 
-The following areas have not yet been scoped:
+### Retrospective board
 
-- Exact fixed weekly questions
-- Exact fixed emoji reaction set
-- Social login providers beyond Google/Microsoft
-- Project creation flow
-- Whether anyone can create a project
-- Whether there are organization/workspace-level accounts
-- Email notification preferences
-- In-app notification center design
-- Whether replies can be edited/deleted
-- Whether custom questions can be edited/deleted
-- Question ordering
-- Whether questions support categories/tags
-- File/image attachments
-- Mobile app vs responsive web only
-- Analytics/reporting
-- Data retention
-- Security/audit requirements
-- Pricing and billing
-- Admin moderation/reporting
-- Technical architecture
-- MVP vs post-MVP prioritization
+Supports four modes:
+
+1. Reveal
+2. Cluster
+3. Vote
+4. Discuss
+
+### Meeting upload page
+
+Allows audio, video, transcript-file upload, or pasted text.
+
+Shows processing status and generated results.
+
+### Retrospective summary
+
+Contains:
+
+- Top discussion topics
+- Key notes
+- Confirmed decisions
+- Confirmed action items
+- Attendance and participation
+- Original feedback cards
+
+## Roles
+
+### Team member
+
+Can:
+
+- Submit and edit their own feedback
+- Choose attribution or anonymity
+- Participate in clustering
+- Vote
+- View completed retrospective summaries
+- Update actions assigned to them
+
+### Facilitator
+
+Can also:
+
+- Create and close feedback cycles
+- Start the retrospective
+- Reveal feedback
+- Control the retrospective stages
+- Upload meeting records
+- Review extracted outcomes
+- Edit and publish the final summary
+
+## Explicitly excluded from the MVP
+
+- Built-in meeting recording
+- Zoom, Google Meet, or Microsoft Teams integrations
+- Slack or email integrations
+- Advanced project-management features
+- Automated reminders and escalation
+- Sentiment or employee-performance scoring
+- Cross-project analytics
+- Custom retrospective frameworks
+- Real-time collaborative transcript editing
+- Multiple approval workflows
+
+## Suggested success metrics
+
+- Percentage of invited members who submit feedback
+- Percentage of retrospectives completed
+- Number of confirmed actions per retrospective
+- Percentage of actions completed before the next retrospective
+- Time from meeting upload to published summary
+- Repeat weekly usage by teams
+
+## MVP definition
+
+The MVP is successful when a team can:
+
+1. Create a project and weekly feedback cycle
+2. Collect private Start, Stop, and Continue cards
+3. Reveal and collaboratively cluster the cards
+4. Vote with three stackable votes per person
+5. Discuss topics in priority order
+6. Upload a meeting recording or transcript
+7. Review extracted actions and decisions
+8. Publish a retrospective summary
+
+## Key scope principle
+
+Keep this a **retrospective workflow**, not a meeting recorder, survey platform, or project-management system.
