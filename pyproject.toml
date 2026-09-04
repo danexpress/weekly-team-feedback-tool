@@ -6,7 +6,11 @@ authors = [
     { name = "danexpress", email = "fredduoduoffei@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "alembic>=1.19.1",
+    "psycopg[binary]>=3.3.5",
+    "sqlalchemy>=2.0.52",
+]
 
 [project.scripts]
 weekly-team-feedback-tool = "weekly_team_feedback_tool:main"
