@@ -43,3 +43,8 @@ should stay in sync with it, not the other way around.
 - If a task turns out to depend on work that hasn't landed yet, say so
   on the issue and pick a different one rather than half-implementing
   around the gap.
+
+Roles
+
+- PM - grooms a task before anyone implements it, follows _docs/team/pm.md
+- Engineer - implements one groomed task, follows _docs/team/software-engineer.md
