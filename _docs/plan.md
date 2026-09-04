@@ -254,3 +254,5 @@ The MVP is successful when a team can:
 ## Key scope principle
 
 Keep this a **retrospective workflow**, not a meeting recorder, survey platform, or project-management system.
+
+
